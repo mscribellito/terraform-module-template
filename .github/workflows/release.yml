@@ -24,6 +24,7 @@ jobs:
     - name: release
       uses: cycjimmy/semantic-release-action@v4
       with:
-        ci: false
+        extra_plugins: |
+          conventional-changelog-conventionalcommits
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
