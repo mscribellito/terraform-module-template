@@ -3,7 +3,8 @@ name: Terraform
 
 on:
   pull_request:
-    branches: main
+    branches:
+      - main
 
 jobs:
 
@@ -16,9 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: terraform-docs/gh-actions@v1.1.0
       with:
         ref: ${{ github.event.pull_request.head.ref }}
+    - uses: terraform-docs/gh-actions@v1.1.0
     - name: terraform fmt
       id: fmt
       run: terraform fmt -check

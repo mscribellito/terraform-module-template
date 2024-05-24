@@ -1,5 +1,6 @@
 ---
-branches: ["main"]
+branches:
+  - main
 preset: "angular"
 plugins:
   - "@semantic-release/commit-analyzer"
@@ -7,6 +8,7 @@ plugins:
 
 verifyConditions:
   - "@semantic-release/github"
+
 analyzeCommits:
   - path: "@semantic-release/commit-analyzer"
     releaseRules:
