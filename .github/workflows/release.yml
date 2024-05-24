@@ -14,19 +14,17 @@ permissions:
 jobs:
 
   release:
-    name: terraform
+    name: release
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-          node-version: 20
+        node-version: "lts/*"
     - name: Install dependencies
-      run: |
-        npm install semantic-release semantic-release/git
+      run: npm install semantic-release semantic-release/git
     - name: Release
-      run: |
-        npx semantic-release --debug --no-ci
+      run: npx semantic-release --debug --no-ci
       env:
         GITHUB_TOKEN: ${{ github.token }}
