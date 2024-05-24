@@ -1,10 +1,12 @@
 ---
 branches:
   - main
-preset: "angular"
+
 plugins:
-  - "@semantic-release/commit-analyzer"
-  - "@semantic-release/github"
+  - - "@semantic-release/commit-analyzer"
+    - preset: conventionalcommits
+  - - "@semantic-release/github"
+    - preset: conventionalcommits
 
 verifyConditions:
   - "@semantic-release/github"
